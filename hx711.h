@@ -1,12 +1,12 @@
 #ifndef HX711_H_
 #define HX711_H_
 
-#include "gpio.h"
-#include "stm32f0xx_hal.h"
+#include "stm32f3xx_hal.h"
 
 typedef struct _hx711
 {
-	GPIO_TypeDef* GPIO;
+	GPIO_TypeDef* gpioSck;
+	GPIO_TypeDef* gpioData;
 	uint16_t pinSck;
 	uint16_t pinData;
 	int offset;
