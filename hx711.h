@@ -1,14 +1,24 @@
 #ifndef HX711_H_
 #define HX711_H_
 
-#include "gpio.h"
-#include "stm32f0xx_hal.h"
+#include "stm32f3xx_hal.h"
+#define FLT 10
 
 typedef struct _hx711
 {
 	GPIO_TypeDef* GPIO;
+	uint16_t gpioSck;
+	uint16_t gpioData;
 	uint16_t pinSck;
 	uint16_t pinData;
+	int offsetA;
+	int offsetB;
+	int readingA;
+	int readingB;
+	int valueA;
+	int valueB;
+	float historyA[FLT];
+	float historyB[FLT];
 	int offset;
 	int gain;
 	// 1: channel A, gain factor 128
