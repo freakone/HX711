@@ -6,9 +6,8 @@
 
 typedef struct _hx711
 {
-	GPIO_TypeDef* GPIO;
-	uint16_t gpioSck;
-	uint16_t gpioData;
+	GPIO_TypeDef* gpioSck;
+	GPIO_TypeDef* gpioData;
 	uint16_t pinSck;
 	uint16_t pinData;
 	int offsetA;
@@ -17,8 +16,8 @@ typedef struct _hx711
 	int readingB;
 	int valueA;
 	int valueB;
-	float historyA[FLT];
-	float historyB[FLT];
+	int historyA[FLT];
+	int historyB[FLT];
 	int offset;
 	int gain;
 	// 1: channel A, gain factor 128
