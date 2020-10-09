@@ -20,6 +20,6 @@ typedef struct _hx711
 void HX711_Init(HX711 data);
 HX711 HX711_Tare(HX711 data, uint8_t times);
 int HX711_Value(HX711 data);
-int HX711_AverageValue(HX711 data, uint8_t times);
+int HX711_Average_Value(HX711 data, uint8_t times);
 
 #endif /* HX711_H_ */
